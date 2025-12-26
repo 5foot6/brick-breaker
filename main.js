@@ -178,12 +178,24 @@ function updateBall() {
 
       if (b.visible) {
         if (
-          ball.x > b.x &&
-          ball.x < b.x + brick.width &&
-          ball.y > b.y &&
-          ball.y < b.y + brick.height
-        ) {
-          ball.dy = -ball.dy;
+    ball.x + ball.radius > b.x &&
+    ball.x - ball.radius < b.x + brick.width &&
+    ball.y + ball.radius > b.y &&
+    ball.y - ball.radius < b.y + brick.height
+) {
+          const prevX = ball.x - ball.dx;
+  const prevY = ball.y - ball.dy; // kept for future use
+
+  const hitFromSide =
+    prevX + ball.radius <= b.x ||
+    prevX - ball.radius >= b.x + brick.width;
+
+  if (hitFromSide) {
+    ball.dx = -ball.dx;
+  } else {
+    ball.dy = -ball.dy;
+  }
+
           b.visible = false;
           score += 10;
 
