@@ -28,10 +28,10 @@ let lives = 3;
 
 // Brick settings
 const brick = {
-  rows: 5,
-  columns: 9,
-  width: 80,
-  height: 20,
+  rows: 10,
+  columns: 28,
+  width: 25,
+  height: 25,
   padding: 1,
   offsetTop: 35,
   offsetLeft: 35
@@ -224,8 +224,8 @@ function updateBall() {
 }
 
 function resetBall() {
-  ball.x = canvas.width / 2;
-  ball.y = canvas.height / 2;
+  ball.x = paddle.x + paddle.width / 2;
+ball.y = paddle.y - ball.radius;
   ball.dx = 4;
   ball.dy = -4;
 
