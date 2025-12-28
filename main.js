@@ -29,11 +29,11 @@ let lives = 3;
 // Brick settings
 const brick = {
   rows: 5,
-  columns: 8,
+  columns: 9,
   width: 80,
   height: 20,
-  padding: 10,
-  offsetTop: 60,
+  padding: 1,
+  offsetTop: 35,
   offsetLeft: 35
 };
 
